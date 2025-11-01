@@ -499,7 +499,7 @@ x-shared-env: &shared-api-worker-env
 services:
   # API service
   api:
-    image: langgenius/dify-api:1.4.0
+    image: langgenius/dify-api:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -528,7 +528,7 @@ services:
   # worker service
   # The Celery worker for processing the queue.
   worker:
-    image: langgenius/dify-api:1.4.0
+    image: langgenius/dify-api:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -554,7 +554,7 @@ services:
 
   # Frontend web application.
   web:
-    image: langgenius/dify-web:1.4.0
+    image: langgenius/dify-web:latest
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
@@ -625,7 +625,7 @@ services:
 
   # The DifySandbox
   sandbox:
-    image: langgenius/dify-sandbox:0.2.12
+    image: langgenius/dify-sandbox:latest
     restart: always
     environment:
       # The DifySandbox configurations
@@ -649,7 +649,7 @@ services:
 
   # plugin daemon
   plugin_daemon:
-    image: langgenius/dify-plugin-daemon:0.0.10-local
+    image: langgenius/dify-plugin-daemon:latest-local
     restart: always
     environment:
       # Use the shared environment variables.
@@ -791,7 +791,7 @@ services:
 
   # The Weaviate vector store.
   weaviate:
-    image: semitechnologies/weaviate:1.19.0
+    image: semitechnologies/weaviate:latest
     profiles:
       - ''
       - weaviate
@@ -816,7 +816,7 @@ services:
   # Qdrant vector store.
   # (if used, you need to set VECTOR_STORE to qdrant in the api & worker service.)
   qdrant:
-    image: langgenius/qdrant:v1.7.3
+    image: langgenius/qdrant:latest
     profiles:
       - qdrant
     restart: always
