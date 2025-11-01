@@ -625,7 +625,7 @@ services:
 
   # The DifySandbox
   sandbox:
-    image: langgenius/dify-sandbox:1.10.0-rc1
+    image: langgenius/dify-sandbox:main
     restart: always
     environment:
       # The DifySandbox configurations
